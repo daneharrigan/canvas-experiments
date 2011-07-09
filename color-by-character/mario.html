@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+  <script type="text/javascript" src="https://raw.github.com/daneharrigan/canvas-experiments/master/color-by-character/canvas.js"></script>
+  <script type="text/javascript" src="https://raw.github.com/daneharrigan/canvas-experiments/master/color-by-character/grid.js"></script>
+  <script type="text/javascript">
+    var mario = "     MMMMMM     \n" +
+                "  MMMMMMMMMM    \n" +
+                "    TBTTBBBB    \n" +
+                "  TTTBTTTBTBB   \n" +
+                " TTTBTTTBBTBB   \n" +
+                "  BBBBTTTTBBB   \n" +
+                "   TTTTTTTT     \n" +
+                "     BBBMBBB    \n" +
+                "  BBBMBBMBBBB   \n" +
+                " BBBBMMMMBBBBB  \n" +
+                " TTBMTMMTMBTTT  \n" +
+                " TTTMMMMMMTTTT  \n" +
+                " TTMMMMMMMMTTT  \n" +
+                "   MMMM MMMM    \n" +
+                "  BBBB   BBBB   \n" +
+                " BBBBB   BBBBB  \n";
+
+    window.onload = function(){
+      var canvas = new Canvas('character-head', { width: 500, height: 100 }),
+          grid   = new Grid(mario);
+
+      canvas.settings.size = 4;
+      grid.setColors({
+        ' ': '#FFF',
+        'M': '#D42000',
+        'T': '#FC8E2E',
+        'B': '#7E6500'
+      });
+      grid.draw(canvas);
+    }
+  </script>
+</html>
