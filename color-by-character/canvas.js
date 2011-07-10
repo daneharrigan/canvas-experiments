@@ -1,6 +1,8 @@
 var Canvas = function(id, attributes)
 {
   attributes = attributes || {};
+  attributes['id'] = id;
+
   var canvas = document.createElement('canvas');
   for(var key in attributes)
     canvas.setAttribute(key, attributes[key]);
